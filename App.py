@@ -1301,7 +1301,9 @@ with tab2:
         })
 
     forecast_df = pd.DataFrame(rows)
-    st.dataframe(forecast_df, use_container_width=True, hide_index=True)
+    st.write(type(forecast_df))
+    st.write(forecast_df.head())
+    st.dataframe(forecast_df, use_container_width=True)
 
     csv = forecast_df.to_csv(index=False).encode('utf-8')
     st.download_button(translate('download_csv'), csv,
